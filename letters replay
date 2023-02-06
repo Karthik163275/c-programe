@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int i;
+    int num;
+    printf ("How many elements?\n");
+    scanf ("%i", &i);
+    printf ("Incicialize number?\n");
+    scanf ("%i", &num);
+    int v[i];
+
+ inic(v, i, num) ;
+}
+
+ int inic (int s[], int i, int num)
+ {
+     int n;
+     for (n=0;n<i;n++){
+        s[i] = num;
+        printf("Incializar %i = %i\n", n+1, s[i]); }
+ }
