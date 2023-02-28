@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int i,j,temp;
+	int a[5]={29,50,64,43,90};
+	for(i=0;i<5;i++)
+	{
+		for(j=i+1;j<5;j++)
+		{
+			if(a[j] > a[i])
+			{
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+	printf("printing sorted elements..\n");
+	for(i=0;i<5;i++)
+	{
+		printf("%d\n",a[i]);
+	}
+	return 0;
+}
