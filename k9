@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int p, q, i, j, digit, skip_digit;
+
+    printf("Enter p: ");
+    scanf("%d", &p);
+
+    printf("Enter q: ");
+    scanf("%d", &q);
+
+    printf("Enter the digit to skip: ");
+    scanf("%d", &skip_digit);
+
+    for (i = p; i <= q; i++) {
+        j = i;
+        while (j > 0) {
+            digit = j % 10;
+            if (digit == skip_digit) {
+                
+                goto skip;
+            }
+            j /= 10;
+        }
+        printf("%d\n", i);
+        skip:; 
+    }
+
+    return 0;
+}
