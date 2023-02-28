@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+bool is_prime(int num) {
+    /* Helper function to check if a number is prime */
+    if (num < 2) {
+        return false;
+    }
+    for (int i = 2; i*i <= num; i++) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void print_nth_primes(int n) {
+    int count = 0;
+    int num = 2;
+    printf("The first %d prime numbers are: ", n);
+    while (count < n) {
+        if (is_prime(num)) {
+            printf("%d ", num);
+            count++;
+        }
+        num++;
+    }
+    printf("\n");
+
+    /* Find the nth prime number */
+    int nth_prime = 0;
+    count = 0;
+    num = 2;
+    while (count < n) {
+        if (is_prime(num)) {
+            count++;
+            if (count == n) {
+                nth_prime = num;
+            }
+        }
+        num++;
+    }
+    printf("The %dth prime number is: %d\n", n, nth_prime);
+}
+
+int main() {
+    int n;
+    printf("Enter a value for n: ");
+    scanf("%d", &n);
+    print_nth_primes(n);
+    return 0;
+}
