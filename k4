@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+#define MAX_SIZE 100
+
+int find_kth_smallest(int arr[], int size, int k) {
+    int i, j, temp, kth;
+
+    for (i = 0; i < size - 1; i++) {
+        for (j = i + 1; j < size; j++) {
+            if (arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    kth = arr[k - 1];
+
+    return kth;
+}
+
+int main() {
+    int arr[MAX_SIZE], size, k, kth;
+    int i;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the value of k: ");
+    scanf("%d", &k);
+
+    kth = find_kth_smallest(arr, size, k);
+
+    printf("The kth smallest element is: %d\n", kth);
+
+    return 0;
+}
