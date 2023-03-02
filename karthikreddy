@@ -15,7 +15,7 @@ int main () {
 	printf("enter the marks:");
 	scanf("%f%f%f",&m1,&m2,&m3);
 	sum=m1+m2+m3;
-	total= (m1+m2+m3)/3;
+	total percentage= (m1+m2+m3)/3;
 	printf("\nthe total marks is:%f",sum);
 
 	printf("\nthe total percentage is:%f",total);
